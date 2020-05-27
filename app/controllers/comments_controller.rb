@@ -9,10 +9,15 @@ class CommentsController < ApplicationController
 		redirect_to article_path(@comment.article)
 	end
 
+	# def destroy
+	# 	@comment = Comment.find(params[:comment])
+	# 	@comment.destroy
+	# 	redirect_to article_path(@comment.article)
+	# end
+
 	private
 
 	def comment_params
-		params.require(:comment).permit(:author_name, :body)
+		params.require(:comment).permit(:author_name, :body, :image)
 	end
-
 end
